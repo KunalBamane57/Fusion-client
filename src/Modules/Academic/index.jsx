@@ -6,6 +6,7 @@ function AcademicPage() {
     <>
       <CustomBreadcrumbs />
       <Text>Academic Page</Text>
+      <p>..</p>
     </>
   );
 }
