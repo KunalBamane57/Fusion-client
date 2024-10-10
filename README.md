@@ -63,3 +63,5 @@ const ExampleComponent = () => {
 
 **Note**: Please make sure to follow the project structure and naming conventions while adding new files or folders to the project.
 
+## Contributors
+  - Kamal Satwani
