@@ -9,6 +9,9 @@ import LoginPage from "./pages/login";
 import ForgotPassword from "./pages/forgotPassword";
 import AcademicPage from "./Modules/Academic/index";
 import ValidateAuth from "./helper/validateauth";
+import CourseManagementPage from "./Modules/Academic/CourseManagement";
+import CourseList from "./Modules/Academic/CourseManagement/CourseList";
+import CourseDetails from "./Modules/Academic/CourseManagement/CourseDetails";
 
 export default function App() {
   const location = useLocation();
@@ -40,6 +43,11 @@ export default function App() {
             </Layout>
           }
         />
+        <Route path="/course-management" element={<Layout />}>
+          <Route index element={<CourseManagementPage />} />
+          <Route path="courses" element={<CourseList />} />
+          <Route path=":courseId" element={<CourseDetails />} />
+        </Route>
         <Route
           path="/profile"
           element={
