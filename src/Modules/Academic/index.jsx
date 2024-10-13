@@ -5,7 +5,7 @@ function AcademicPage() {
   return (
     <>
       <CustomBreadcrumbs />
-      <Text>Academic Page</Text> 
+      <Text>Academics Page</Text>
     </>
   );
 }
