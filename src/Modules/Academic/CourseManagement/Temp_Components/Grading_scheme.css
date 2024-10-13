@@ -1,9 +1,9 @@
-.main_grading_scheme{
-    border: 2px solid #ccc;
-    padding: 0px 50px;
-    /* border-radius: 20px; */
-    background-color: white;
-    padding-bottom: 20px;
+.main_grading_scheme {
+  border: 2px solid #ccc;
+  padding: 0px 50px;
+  /* border-radius: 20px; */
+  background-color: white;
+  padding-bottom: 20px;
 }
 
 .Grading_table {
@@ -13,7 +13,8 @@
   border: 2px solid #ccc; /* Adds outer border */
 }
 
-.Grading_table th, .Grading_table td {
+.Grading_table th,
+.Grading_table td {
   border-right: 1px solid #ccc; /* Adds border between columns */
   padding: 1rem; /* Adds padding for better readability */
   text-align: center;
@@ -44,7 +45,8 @@
 
 /* Responsive table */
 @media (max-width: 768px) {
-  .Grading_table th, .Grading_table td {
+  .Grading_table th,
+  .Grading_table td {
     padding: 0.75rem; /* Slightly reduce padding on smaller screens */
   }
 }

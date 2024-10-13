@@ -55,10 +55,9 @@ function Grading_scheme() {
           value={evaluationType}
           onChange={(value) => setEvaluationType(value || "")}
           style={{ flex: 1 }}
-          // Custom styles to increase the label font size
           styles={{
             label: {
-              fontSize: "18px", // Change this size as needed
+              fontSize: "18px",
             },
           }}
         />
@@ -68,10 +67,9 @@ function Grading_scheme() {
           value={weightage}
           onChange={(event) => setWeightage(event.currentTarget.value)}
           style={{ flex: 1 }}
-          // Custom styles to increase the label font size
           styles={{
             label: {
-              fontSize: "18px", // Change this size as needed
+              fontSize: "18px",
             },
           }}
         />
@@ -125,7 +123,6 @@ function Grading_scheme() {
         </Table>
       </div>
 
-      {/* Upload Button */}
       <div style={{ marginTop: "20px", textAlign: "center" }}>
         <Button variant="filled" color="blue">
           Upload Grading Scheme
