@@ -1,0 +1,52 @@
+.main_grading_scheme {
+  border: 2px solid #ccc;
+  padding: 0px 50px;
+  /* border-radius: 20px; */
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+.Grading_table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #000;
+  border: 2px solid #ccc; /* Adds outer border */
+}
+
+.Grading_table th,
+.Grading_table td {
+  border-right: 1px solid #ccc; /* Adds border between columns */
+  padding: 1rem; /* Adds padding for better readability */
+  text-align: center;
+  color: #000;
+}
+
+.Grading_table thead {
+  background-color: #f0f0f0; /* Matches the header background */
+  border-bottom: 2px solid #ccc;
+}
+
+.Grading_table tbody tr {
+  border-bottom: 1px solid #ccc; /* Adds border between rows */
+}
+
+.Grading_table tbody td:hover {
+  background-color: #f9f9f9; /* Adds hover effect */
+}
+
+/* Style the TextInput inside the table */
+.Grading_table input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #000;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .Grading_table th,
+  .Grading_table td {
+    padding: 0.75rem; /* Slightly reduce padding on smaller screens */
+  }
+}
