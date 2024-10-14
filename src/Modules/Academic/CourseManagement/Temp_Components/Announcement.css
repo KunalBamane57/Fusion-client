@@ -1,7 +1,10 @@
-.fusionText {
+.fusionText { 
   font-size: 2rem;
   font-weight: 600;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .fusionText {
     font-size: 1.5rem;
   }
 }
@@ -16,10 +19,45 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 .customButton:hover {
   background-color: #00a6ab;
+}
+
+@media (min-width: 768px) {
+  .customButton {
+    width: auto;
+  }
+}
+
+.fusionTabsContainer {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0;
+}
+
+.fusionTabsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.fusionTabsWrapper {
+  display: flex;
+  overflow-x: auto;
+}
+
+.fusionTabItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fusionTabsNavigation {
+  display: flex;
+  align-items: center;
+  border: none;
 }
 
 .fusionActiveRecentTab {
@@ -50,72 +88,78 @@
   opacity: 0.7;
 }
 
-.fusionTabsContainer {
-  display: flex;
-  justify-content: flex-start;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0;
-}
-
-.fusionTabItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.fusionTabsNavigation {
-  display: flex;
-  align-items: center;
-  border: none;
-}
-
-.fusionTabsWrapper {
-  display: flex;
-  overflow-x: auto;
-}
-
-.fusionTabsContainer::-webkit-scrollbar {
-  display: none;
-}
-
 .announcementWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
-  width: 90vw;
-  padding: 2rem;
+  min-height: 70vh;
+  width: 100%;
+  padding: 1rem;
   box-sizing: border-box;
+  margin-top: 2rem;
 }
 
 .cardContainer {
-  height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 3rem;
+  margin: 0 auto;
+  padding: 2rem;
   box-sizing: border-box;
 }
 
 .announcementHeader {
   display: flex;
   align-items: center;
-  justify-content: left;
-  margin-left: 1rem;
-  flex: 1;
-  max-width: 400px;
-  padding: 2rem;
+  justify-content: flex-start;
+  padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: white;
+  margin: 0 1rem;
+  width: 100%;
+  max-width: 100%;
+  flex-direction: row;
 }
+
+@media (min-width: 1024px) {
+  .announcementHeader {
+    width: 30%; 
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .announcementHeader {
+    width: 50%; 
+  }
+}
+
+@media (max-width: 767px) {
+  .announcementHeader {
+    width: 90%; 
+  }
+}
+
 
 .announcementInfo {
   margin-left: 1.5rem;
+  text-align: left;
+  flex-grow: 1;
 }
 
 .profileImage {
   border: 2px solid #15abff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  .announcementHeader {
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .announcementInfo {
+    margin-left: 2rem;
+  }
 }
 
 .fileButton {
@@ -142,4 +186,3 @@
 .fileIcon {
   margin-right: 10px;
 }
-
