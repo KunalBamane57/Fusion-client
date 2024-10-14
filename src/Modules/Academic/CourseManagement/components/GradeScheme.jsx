@@ -1,7 +1,7 @@
 function GradeScheme() {
   return (
     <div>
-      <h1>Course Content</h1>
+      <h1>Grade Scheme</h1>
     </div>
   );
 }

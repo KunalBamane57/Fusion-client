@@ -1,7 +1,7 @@
 function SubmitMarks() {
   return (
     <div>
-      <h1>Course Content</h1>
+      <h1>Submit marks</h1>
     </div>
   );
 }

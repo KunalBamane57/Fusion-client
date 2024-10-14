@@ -9,7 +9,7 @@ import LoginPage from "./pages/login";
 import ForgotPassword from "./pages/forgotPassword";
 import AcademicPage from "./Modules/Academic/index";
 import ValidateAuth from "./helper/validateauth";
-import ManageCoursePage from "./Modules/Academic/CourseManagement/ManageCourse";
+import CourseManagementPage from "./Modules/Academic/CourseManagement";
 
 export default function App() {
   const location = useLocation();
@@ -35,7 +35,7 @@ export default function App() {
         />
         <Route path="/academics" element={<Layout />}>
           <Route index element={<AcademicPage />} />
-          <Route path="course-management" element={<ManageCoursePage />} />
+          <Route path="course-management" element={<CourseManagementPage />} />
         </Route>
 
         <Route

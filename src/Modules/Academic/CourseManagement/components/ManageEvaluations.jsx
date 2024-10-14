@@ -1,7 +1,7 @@
 function ManageEvaluations() {
   return (
     <div>
-      <h1>Course Content</h1>
+      <h1>manage evaluations</h1>
     </div>
   );
 }

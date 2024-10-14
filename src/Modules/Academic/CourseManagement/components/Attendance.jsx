@@ -1,7 +1,7 @@
 function Attendance() {
   return (
     <div>
-      <h1>Course Content</h1>
+      <h1>Attendance</h1>
     </div>
   );
 }
