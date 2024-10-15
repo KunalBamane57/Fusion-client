@@ -24,21 +24,14 @@ function GradeScheme() {
       [grade]: { ...prev[grade], [bound]: value },
     }));
   };
+
   return (
     <div className="main_grading_scheme">
       <div className="heading">
         <h1>Create Grading Scheme</h1>
       </div>
 
-      <div
-        className="type_of_evaluation"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "20px",
-          marginBottom: "20px",
-        }}
-      >
+      <div className="type_of_evaluation">
         <Select
           label="Type of Evaluation"
           placeholder="Select Evaluation"
@@ -53,37 +46,19 @@ function GradeScheme() {
           ]}
           value={evaluationType}
           onChange={(value) => setEvaluationType(value || "")}
-          style={{ flex: 1 }}
-          styles={{
-            label: {
-              fontSize: "18px",
-            },
-          }}
+          className="evaluation_select"
         />
         <TextInput
           label="Weightage (%)"
           placeholder="Enter Weightage"
           value={weightage}
           onChange={(event) => setWeightage(event.currentTarget.value)}
-          style={{ flex: 1 }}
-          styles={{
-            label: {
-              fontSize: "18px",
-            },
-          }}
+          className="evaluation_weightage"
         />
-        <Button style={{ marginBottom: "-20px" }}>Add</Button>
+        <Button className="add_button">Add</Button>
       </div>
 
-      <div
-        className="grading_table"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "20px",
-          marginBottom: "20px",
-        }}
-      >
+      <div className="grading_table_wrapper">
         <Table striped highlightOnHover className="Grading_table">
           <thead>
             <tr>
@@ -95,7 +70,7 @@ function GradeScheme() {
           <tbody>
             {Object.keys(gradeBounds).map((grade) => (
               <tr key={grade}>
-                <td style={{ margin: "auto" }}>{grade}</td>
+                <td>{grade}</td>
                 <td>
                   <TextInput
                     placeholder="Lower Bound"
@@ -103,7 +78,6 @@ function GradeScheme() {
                     onChange={(e) =>
                       handleGradeChange(grade, "lower", e.currentTarget.value)
                     }
-                    style={{ width: "500px", margin: "auto" }}
                   />
                 </td>
                 <td>
@@ -113,7 +87,6 @@ function GradeScheme() {
                     onChange={(e) =>
                       handleGradeChange(grade, "upper", e.currentTarget.value)
                     }
-                    style={{ width: "500px", margin: "auto" }}
                   />
                 </td>
               </tr>
@@ -122,7 +95,7 @@ function GradeScheme() {
         </Table>
       </div>
 
-      <div style={{ marginTop: "20px", textAlign: "center" }}>
+      <div className="upload_button_wrapper">
         <Button variant="filled" color="blue">
           Upload Grading Scheme
         </Button>

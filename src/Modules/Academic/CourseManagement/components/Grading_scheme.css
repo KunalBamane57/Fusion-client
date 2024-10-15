@@ -1,52 +1,97 @@
+/* Main Grading Scheme Container */
 .main_grading_scheme {
   border: 2px solid #ccc;
-  padding: 0px 50px;
-  /* border-radius: 20px; */
+  padding: 20px;
   background-color: white;
-  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.heading h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Type of Evaluation Section */
+.type_of_evaluation {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.evaluation_select,
+.evaluation_weightage {
+  flex: 1;
+  min-width: 200px;
+}
+
+.add_button {
+  flex: none;
+  margin-top: 23px;
+}
+
+/* Grading Table Section */
+.grading_table_wrapper {
+  overflow-x: auto; /* Add scroll on small screens */
+  margin-bottom: 20px;
 }
 
 .Grading_table {
   width: 100%;
   border-collapse: collapse;
-  color: #000;
-  border: 2px solid #ccc; /* Adds outer border */
+  border: 2px solid #ccc;
 }
 
 .Grading_table th,
 .Grading_table td {
-  border-right: 1px solid #ccc; /* Adds border between columns */
-  padding: 1rem; /* Adds padding for better readability */
+  padding: 10px;
+  border: 1px solid #ccc;
   text-align: center;
-  color: #000;
 }
 
 .Grading_table thead {
-  background-color: #f0f0f0; /* Matches the header background */
-  border-bottom: 2px solid #ccc;
+  background-color: #f0f0f0;
 }
 
-.Grading_table tbody tr {
-  border-bottom: 1px solid #ccc; /* Adds border between rows */
+.Grading_table tbody tr:hover {
+  background-color: #f9f9f9;
 }
 
-.Grading_table tbody td:hover {
-  background-color: #f9f9f9; /* Adds hover effect */
+/* Upload Button Section */
+.upload_button_wrapper {
+  text-align: center;
+  margin-top: 20px;
 }
 
-/* Style the TextInput inside the table */
-.Grading_table input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #000;
-}
-
-/* Responsive table */
+/* Responsive Styles */
 @media (max-width: 768px) {
+  .main_grading_scheme {
+    padding: 10px;
+  }
+
+  .heading h1 {
+    font-size: 1.5rem;
+  }
+
+  .type_of_evaluation {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .grading_table_wrapper {
+    margin-bottom: 15px;
+  }
+
   .Grading_table th,
   .Grading_table td {
-    padding: 0.75rem; /* Slightly reduce padding on smaller screens */
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .upload_button_wrapper {
+    margin-top: 15px;
   }
 }
