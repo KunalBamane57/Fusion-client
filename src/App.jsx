@@ -33,7 +33,14 @@ export default function App() {
             </Layout>
           }
         />
-        <Route path="/academics" element={<Layout />}>
+        <Route
+          path="/academics"
+          element={
+            <Layout>
+              <AcademicPage />
+            </Layout>
+          }
+        >
           <Route index element={<AcademicPage />} />
           <Route path="course-management" element={<CourseManagementPage />} />
         </Route>
