@@ -1,7 +1,7 @@
 function EvaluateAssignment() {
   return (
     <div>
-      <h1>Course Content</h1>
+      <h1>Evaluate assignment</h1>
     </div>
   );
 }
