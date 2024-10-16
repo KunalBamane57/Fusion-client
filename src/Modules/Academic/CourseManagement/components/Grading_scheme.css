@@ -1,14 +1,16 @@
 /* Main Grading Scheme Container */
 .main_grading_scheme {
-  border: 2px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   background-color: white;
+  max-width: 90vw;
+  border-radius: 8px;
   margin: 0 auto;
 }
 
 /* Heading */
 .heading h1 {
-  text-align: center;
+  /* text-align: center; */
   font-size: 2rem;
   margin-bottom: 20px;
 }
