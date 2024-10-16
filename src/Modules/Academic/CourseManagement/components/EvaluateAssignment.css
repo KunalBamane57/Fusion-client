@@ -1,0 +1,110 @@
+/* Styles for the Paper container */
+.paperContainer {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 90vw;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table header style */
+  .tableHeader {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #d3d3d3;
+  }
+  
+  .tableHeader th {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 600;
+  }
+  
+  /* Scrollable table */
+  .tableContainer {
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+  
+  tbody tr td {
+    text-align: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* Search Input */
+  .searchInput {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Tab container and buttons */
+  .tabContainer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .assignmentButton {
+    background-color: #15abff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .assignmentButton:hover {
+    background-color: #0096d1;
+  }
+  
+  /* Custom button */
+  .customButton {
+    background-color: #15abff;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+  }
+  
+  .customButton:hover {
+    background-color: #0096d1;
+  }
+  
+  /* Generate Button */
+  .generateButton {
+    background-color: #15abff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
+  }
+  
+  .generateButton:hover {
+    background-color: #00a6ab;
+  }
+  
+  @media (max-width: 768px) {
+    .tableHeader th, tbody tr td {
+      font-size: 12px;
+      padding: 6px;
+    }
+  }
+  
