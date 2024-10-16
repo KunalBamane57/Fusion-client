@@ -65,3 +65,4 @@ const ExampleComponent = () => {
 
 ## Contributors
   - Kamal Satwani
+  - Kunal Bamane
