@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Text, Card, Button, Group } from "@mantine/core";
 import CustomBreadcrumbs from "../../components/Breadcrumbs";
+// import Student_dashboard from "./CourseManagement/Temp_Components/Student_dashboard";
 
 function AcademicPage() {
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ function AcademicPage() {
           </Button>
         </Group>
       </Card>
+      {/* <Student_dashboard/> */}
     </>
   );
 }
