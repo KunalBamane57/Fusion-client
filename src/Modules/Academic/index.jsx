@@ -11,7 +11,7 @@ function AcademicPage() {
       <CustomBreadcrumbs />
       <Text>Academic Page</Text>
       <Card shadow="sm" padding="lg" radius="md" withBorder>
-        <Text size="lg" weight={500}>
+        <Text size="xl" weight={700}>
           Course Management
         </Text>
         <Text size="sm" color="dimmed">
