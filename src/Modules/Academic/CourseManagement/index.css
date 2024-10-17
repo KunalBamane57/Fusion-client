@@ -1,0 +1,10 @@
+.grp_btn button{
+        background:none;
+        color: black;
+        border-radius: 0px;
+}
+.grp_btn button:hover{
+    background-color: rgb(245, 247, 248);
+    color: black;
+    border-bottom:2px solid blue;
+}

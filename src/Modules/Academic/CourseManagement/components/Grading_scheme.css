@@ -33,6 +33,8 @@
 .add_button {
   flex: none;
   margin-top: 23px;
+  background-color: #15abff;
+  color: white;
 }
 
 /* Grading Table Section */

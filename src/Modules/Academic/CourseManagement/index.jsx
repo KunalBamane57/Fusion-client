@@ -8,6 +8,7 @@ import GradeScheme from "./components/GradeScheme";
 import SubmitMarks from "./components/SubmitMarks";
 import EvaluateAssignment from "./components/EvaluateAssignment";
 import ManageEvaluations from "./components/ManageEvaluations";
+import "./index.css";
 
 function CourseManagementPage() {
   const [activeComponent, setActiveComponent] = useState("Announcements");
@@ -38,7 +39,7 @@ function CourseManagementPage() {
       <CustomBreadcrumbs />
       <Text>Course Management Page</Text>
 
-      <Group position="center" spacing="md" mb="md">
+      <Group position="center" spacing="md" mb="md" className="grp_btn">
         <Button onClick={() => setActiveComponent("Announcements")}>
           Announcements
         </Button>
