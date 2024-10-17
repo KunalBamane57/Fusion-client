@@ -96,7 +96,7 @@ function GradeScheme() {
       </div>
 
       <div className="upload_button_wrapper">
-        <Button variant="filled" color="blue">
+        <Button variant="filled" color="blue" className="add_button">
           Upload Grading Scheme
         </Button>
       </div>
