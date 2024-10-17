@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Text, Card, Button, Group } from "@mantine/core";
 import CustomBreadcrumbs from "../../components/Breadcrumbs";
-// import SubmitAssignment from "./CourseManagement/Temp_Components/SubmitAssignment";
 
 function AcademicPage() {
   const navigate = useNavigate();
@@ -10,6 +9,7 @@ function AcademicPage() {
     <>
       <CustomBreadcrumbs />
       <Text>Academic Page</Text>
+
       <Card shadow="sm" padding="lg" radius="md" withBorder>
         <Text size="xl" weight={700}>
           Course Management
@@ -29,7 +29,6 @@ function AcademicPage() {
           </Button>
         </Group>
       </Card>
-      {/* <SubmitAssignment /> */}
     </>
   );
 }
