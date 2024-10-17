@@ -1,0 +1,47 @@
+.submit-marks-container {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Flexbox for the dropdown and total marks input */
+  .marks-header-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px; /* Space between select and text input */
+    margin-bottom: 20px;
+  }
+  
+  .exam-select-small {
+    width: 250px; /* Smaller width for dropdown */
+  }
+  
+  .total-marks-input {
+    width: 200px; /* Custom width for total marks input */
+  }
+  
+  .marks-table {
+    margin-bottom: 20px;
+  }
+  
+  .marks-table th, .marks-table td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .submit-button {
+    background-color: #15abff;
+    color: white;
+    display: block;
+    margin: 0 auto;
+  }
+  
