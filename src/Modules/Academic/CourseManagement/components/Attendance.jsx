@@ -9,10 +9,16 @@ function Attendance() {
   return (
     <div className="Main">
       <div className="attendance-buttons">
-        <button onClick={() => setActiveComponent("view")}>
+        <button
+          className={activeComponent === "view" ? "active" : ""}
+          onClick={() => setActiveComponent("view")}
+        >
           View Attendance
         </button>
-        <button onClick={() => setActiveComponent("submit")}>
+        <button
+          className={activeComponent === "submit" ? "active" : ""}
+          onClick={() => setActiveComponent("submit")}
+        >
           Submit Attendance
         </button>
       </div>

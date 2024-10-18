@@ -19,5 +19,5 @@
 
 /* Style for the active button */
 .grp_btn button.active {
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid rgb(0, 170, 255);
 }

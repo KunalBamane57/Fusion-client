@@ -1,14 +1,17 @@
-.attendance{
+.attendance {
     display: flex;
 }
-.view_attendance{
+
+.view_attendance {
     width: 100%;
 }
-.Main{
+
+.Main {
     margin-left: 20px;
     margin-right: 20px;
 }
-.attendance-buttons button{
+
+.attendance-buttons button {
     background-color: #15abff;
     color: white;
     border: none;
@@ -21,7 +24,20 @@
     margin-left: 5px;
     margin-bottom: 20px;
 }
-.attendance-buttons{
+
+/* Style for the active button */
+.attendance-buttons button.active {
+    background-color: white;
+    color: #15abff;
+    border: 2px solid #15abff;
+}
+
+/* Hover state */
+.attendance-buttons button:hover {
+    background-color: #0d94dd;
+}
+
+.attendance-buttons {
     display: flex;
     gap: 10px;
 }

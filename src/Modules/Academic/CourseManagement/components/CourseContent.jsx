@@ -58,7 +58,11 @@ function CourseContent() {
           value={moduleInput}
           onChange={(e) => setModuleInput(e.target.value)}
         />
-        <Button onClick={addModule} style={{ margin: "10px 0" }}>
+        <Button
+          onClick={addModule}
+          style={{ margin: "10px 0" }}
+          className="submit_btn"
+        >
           Submit
         </Button>
 
@@ -102,7 +106,11 @@ function CourseContent() {
           min="0"
           max={modules.length - 1}
         />
-        <Button onClick={addSlide} style={{ margin: "10px 0" }}>
+        <Button
+          onClick={addSlide}
+          style={{ margin: "10px 0" }}
+          className="submit_btn"
+        >
           Submit
         </Button>
 

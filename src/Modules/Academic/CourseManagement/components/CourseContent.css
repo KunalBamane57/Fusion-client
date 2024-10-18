@@ -79,4 +79,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+  .submit_btn{
+    background-color: #15abff;
+    color: white;
+  }
