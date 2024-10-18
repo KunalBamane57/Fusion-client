@@ -50,7 +50,7 @@ function SubmitMarks() {
 
       <Table highlightOnHover className="marks-table">
         <thead>
-          <tr>
+          <tr className="marks_table_tr">
             <th>Roll Number</th>
             <th>Student Name</th>
             <th>Marks Obtained</th>

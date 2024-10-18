@@ -1,0 +1,27 @@
+.attendance{
+    display: flex;
+}
+.view_attendance{
+    width: 100%;
+}
+.Main{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.attendance-buttons button{
+    background-color: #15abff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+.attendance-buttons{
+    display: flex;
+    gap: 10px;
+}

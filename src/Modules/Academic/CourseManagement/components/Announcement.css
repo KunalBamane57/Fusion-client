@@ -104,6 +104,7 @@
   margin: 0 auto;
   padding: 2rem;
   box-sizing: border-box;
+  border-left: 0.6rem solid #15ABFF;
 }
 
 .announcementHeader {
