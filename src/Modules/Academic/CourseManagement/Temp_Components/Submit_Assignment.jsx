@@ -9,9 +9,9 @@ import {
   FileButton,
 } from "@mantine/core";
 import { Document, Page } from "react-pdf";
-import "./SubmitAssignment.css";
+import "./Submit_Assignment.css";
 
-function SubmitAssignment() {
+function Submit_Assignment() {
   const [pageCount, setNumPages] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [pdfError, setPdfError] = useState(false);
@@ -68,7 +68,7 @@ function SubmitAssignment() {
           <Text mt="md">
             The Dashboard is a central component of our Fusion Software, serving
             as the primary interface for navigating various modules based on
-            user roles and designations...
+            user roles and designations....
           </Text>
 
           <div className="pdf-viewer">
@@ -119,4 +119,4 @@ function SubmitAssignment() {
   );
 }
 
-export default SubmitAssignment;
+export default Submit_Assignment;
