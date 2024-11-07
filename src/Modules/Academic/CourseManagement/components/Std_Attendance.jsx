@@ -1,8 +1,8 @@
 import React from "react";
 import { Table } from "@mantine/core";
-import "./Attendance.css";
+import "./Std_Attendance.css";
 
-function Attendance() {
+function Std_Attendance() {
   const attendanceData = [
     { rollNo: "22BCS001", totalPresent: 7, percentage: "70%" },
     { rollNo: "22BCS002", totalPresent: 7, percentage: "70%" },
@@ -39,4 +39,4 @@ function Attendance() {
   );
 }
 
-export default Attendance;
+export default Std_Attendance;
