@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SubmitAttendance from "./Attendance/SubmitAttendance";
 import "./Attendance.css";
-import Viewattendance from "./Attendance/Viewattendance";
+import ViewAttendance from "./Attendance/ViewAttendance";
 
 function Attendance() {
   const [activeComponent, setActiveComponent] = useState(null);
@@ -26,7 +26,7 @@ function Attendance() {
       <div className="attendance">
         {activeComponent === "view" && (
           <div className="view_attendance">
-            <Viewattendance />
+            <ViewAttendance />
           </div>
         )}
         {activeComponent === "submit" && (
