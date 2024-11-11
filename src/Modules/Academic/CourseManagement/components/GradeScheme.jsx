@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { Button, Select, TextInput, Table } from "@mantine/core";
+import { Button, TextInput, Table } from "@mantine/core";
 import "./Grading_scheme.css";
 
 function GradeScheme() {
-  const [evaluationType, setEvaluationType] = useState("");
-  const [weightage, setWeightage] = useState("");
   const [gradeBounds, setGradeBounds] = useState({
     O: { lower: "", upper: "" },
     "A+": { lower: "", upper: "" },
@@ -30,34 +28,6 @@ function GradeScheme() {
       <div className="heading">
         <h1>Create Grading Scheme</h1>
       </div>
-
-      <div className="type_of_evaluation">
-        <Select
-          label="Type of Evaluation"
-          placeholder="Select Evaluation"
-          data={[
-            "Project",
-            "Lab Evaluation",
-            "Assignment",
-            "Quiz",
-            "Mid Sem Exam",
-            "End Sem Exam",
-            "Attendance",
-          ]}
-          value={evaluationType}
-          onChange={(value) => setEvaluationType(value || "")}
-          className="evaluation_select"
-        />
-        <TextInput
-          label="Weightage (%)"
-          placeholder="Enter Weightage"
-          value={weightage}
-          onChange={(event) => setWeightage(event.currentTarget.value)}
-          className="evaluation_weightage"
-        />
-        <Button className="add_button">Add</Button>
-      </div>
-
       <div className="grading_table_wrapper">
         <Table striped highlightOnHover className="Grading_table">
           <thead>
