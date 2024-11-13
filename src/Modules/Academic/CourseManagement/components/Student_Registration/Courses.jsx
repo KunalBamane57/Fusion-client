@@ -66,7 +66,7 @@ function Courses() {
   return (
     <div className="p-4">
       <div className="text-center mb-2 font-bold">
-        <span className="text-xl">Available Courses for Next Semester</span>
+        <span className="heading">Available Courses for Next Semester</span>
       </div>
       <table className="table-auto">
         <thead>

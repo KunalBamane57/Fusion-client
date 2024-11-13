@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SubmitAttendance from "./Attendance/SubmitAttendance";
 import "./Attendance.css";
-import ViewAttendance from "./Attendance/ViewAttendance";
+import ViewAttendance from "./Attendance/viewAttendance";
 
 function Attendance() {
   const [activeComponent, setActiveComponent] = useState(null);

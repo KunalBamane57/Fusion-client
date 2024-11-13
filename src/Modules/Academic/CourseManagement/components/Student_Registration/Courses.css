@@ -65,6 +65,12 @@ tbody tr:hover {
   cursor: pointer;
 }
 
+/* Add new styles for the heading */
+.heading {
+  color: #15abff;
+  font-size: 24px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   td,

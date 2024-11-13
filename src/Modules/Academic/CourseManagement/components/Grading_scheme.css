@@ -11,7 +11,8 @@
 /* Heading */
 .heading h1 {
   /* text-align: center; */
-  font-size: 2rem;
+  color: #15abff;
+  font-size: 24px;
   margin-bottom: 20px;
 }
 

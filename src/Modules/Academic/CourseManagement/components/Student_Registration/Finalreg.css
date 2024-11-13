@@ -2,16 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2.5rem; /* Equivalent to mt-10 in Tailwind */
-  gap: 1rem; /* Equivalent to gap-4 in Tailwind */
+  margin-top: 2.5rem; 
+  gap: 1rem;
 }
 
 .finalreg-title {
-  font-size: 1.25rem; /* Equivalent to text-xl in Tailwind */
-  font-weight: 500; /* Equivalent to font-medium in Tailwind */
+  font-size: 24px; 
+  font-weight: bold;
+  color: #15abff;
 }
 
 .finalreg-message {
-  font-size: 1.25rem; /* Equivalent to text-xl in Tailwind */
-  color: #dc2626; /* Equivalent to text-red-600 in Tailwind */
+  font-size: 24px; 
+  color: #dc2626; 
 }
