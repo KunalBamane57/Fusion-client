@@ -1,85 +1,96 @@
 .content-container {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .input-section {
-    margin-bottom: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  th,
-  td {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #e8faff;
-    color: #15abff;
-    font-weight: 600;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .customButton {
-    background-color: #6200ea;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .customButton:hover {
-    background-color: #4500b5;
-  }
-  
-  h2 {
-    color: #000000;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-  
-  input[type="file"] {
-    margin-bottom: 10px;
-  }
-  
-  a {
-    color: #6200ea;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .action-icon {
-    cursor: pointer;
-  }
-  
-  .action-icon:hover {
-    color: red;
-  }
-  
-  .file-name {
-    max-width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .submit_btn{
-    background-color: #15abff;
-    color: white;
-  }
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #e8faff;
+  color: #15abff;
+  font-weight: 600;
+  font-size: 1.2rem; /* Adjusted font size */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.customButton {
+  background-color: #6200ea;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.customButton:hover {
+  background-color: #4500b5;
+}
+
+h2 {
+  color: #15abff; /* Blue color for headings */
+  font-size: 2rem; /* Adjusted font size */
+  margin-bottom: 15px;
+}
+
+input[type="file"] {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #6200ea;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.action-icon {
+  cursor: pointer;
+}
+
+.action-icon:hover {
+  color: red;
+}
+
+.file-name {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.submit_btn {
+  background-color: #15abff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.submit_btn:hover {
+  background-color: #25acde;
+}

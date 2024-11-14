@@ -1,18 +1,30 @@
 .attendance-page {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
   padding: 20px;
   background-color: white;
-  max-width: 90vw;
+  max-width: 90vw; 
   border-radius: 8px;
   margin: 0 auto;
 }
 
 .attendance-page h2 {
-  font-size: 1.8rem;
+  font-size: 24px; /* Set font size to 24px */
+  color: #15abff; 
   margin-bottom: 20px;
 }
 
-/* Tabs */
+@media (min-width: 768px) {
+  .attendance-page h2 {
+    font-size: 24px; /* Keep it 24px for medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .attendance-page h2 {
+    font-size: 24px; /* Keep it 24px for larger screens */
+  }
+}
+
 .tabs {
   display: flex;
   margin-bottom: 20px;
@@ -36,17 +48,27 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  background-color: white;
 }
 
 table th,
 table td {
   padding: 10px;
   text-align: center;
-  border: 1px solid #ddd;
 }
 
 table th {
-  background-color: #f0f0f0;
+  background-color: white;
+  font-weight: bold;
+  color: #333;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #fdfdfd;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #fafafa;
 }
 
 table tbody tr:hover {
