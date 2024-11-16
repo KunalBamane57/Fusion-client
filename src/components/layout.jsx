@@ -1,11 +1,11 @@
 import { AppShell, Divider } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import PropTypes from "prop-types";
 import SidebarContent from "./sidebarContent";
 import Header from "./header";
 
-export function Layout() {
+export function Layout({ children }) {
   const [opened, { close, open }] = useDisclosure(false);
   const [isCollapsed, setIsCollapsed] = useState(true);
 
@@ -46,9 +46,12 @@ export function Layout() {
           toggleSidebar={toggleSidebar}
         />
       </AppShell.Navbar>
-      <AppShell.Main bg="#F5F7F8">
-        <Outlet />
-      </AppShell.Main>
+
+      <AppShell.Main bg="#F5F7F8">{children}</AppShell.Main>
     </AppShell>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
