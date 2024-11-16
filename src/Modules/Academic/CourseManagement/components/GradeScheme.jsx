@@ -1,27 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Button, TextInput, Table } from "@mantine/core";
 import "./Grading_scheme.css";
 
 function GradeScheme() {
-  const [gradeBounds, setGradeBounds] = useState({
-    O: { lower: "", upper: "" },
-    "A+": { lower: "", upper: "" },
-    A: { lower: "", upper: "" },
-    "B+": { lower: "", upper: "" },
-    B: { lower: "", upper: "" },
-    "C+": { lower: "", upper: "" },
-    C: { lower: "", upper: "" },
-    "D+": { lower: "", upper: "" },
-    D: { lower: "", upper: "" },
-    F: { lower: "", upper: "" },
-  });
+  useEffect(() => {
+    // Declare table only once
+    const tableElement = document.querySelector(".grading_table");
 
-  const handleGradeChange = (grade, bound, value) => {
-    setGradeBounds((prev) => ({
-      ...prev,
-      [grade]: { ...prev[grade], [bound]: value },
-    }));
-  };
+    if (tableElement) {
+      const inputs = tableElement.querySelectorAll("input");
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", (e) => {
+          const row = e.target.closest("tr");
+          const grade = row.querySelector("td:first-child").innerText;
+
+          // Ensure closest td exists and has the data-bound attribute
+          const boundCell = e.target.closest("td");
+          const bound = boundCell ? boundCell.dataset.bound : null;
+
+          if (bound) {
+            console.log(
+              `Grade: ${grade}, Bound: ${bound}, Value: ${e.target.value}`,
+            );
+          } else {
+            console.error("No data-bound attribute found");
+          }
+        });
+      });
+
+      // Cleanup event listeners when the component unmounts
+      return () => {
+        inputs.forEach((input) => {
+          input.removeEventListener("input", () => {});
+        });
+      };
+    }
+  }, []);
 
   return (
     <div className="main_grading_scheme">
@@ -38,29 +53,19 @@ function GradeScheme() {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(gradeBounds).map((grade) => (
-              <tr key={grade}>
-                <td>{grade}</td>
-                <td>
-                  <TextInput
-                    placeholder="Lower Bound"
-                    value={gradeBounds[grade].lower}
-                    onChange={(e) =>
-                      handleGradeChange(grade, "lower", e.currentTarget.value)
-                    }
-                  />
-                </td>
-                <td>
-                  <TextInput
-                    placeholder="Upper Bound"
-                    value={gradeBounds[grade].upper}
-                    onChange={(e) =>
-                      handleGradeChange(grade, "upper", e.currentTarget.value)
-                    }
-                  />
-                </td>
-              </tr>
-            ))}
+            {["O", "A+", "A", "B+", "B", "C+", "C", "D+", "D", "F"].map(
+              (grade) => (
+                <tr key={grade}>
+                  <td>{grade}</td>
+                  <td data-bound="lower">
+                    <TextInput placeholder="Lower Bound" />
+                  </td>
+                  <td data-bound="upper">
+                    <TextInput placeholder="Upper Bound" />
+                  </td>
+                </tr>
+              ),
+            )}
           </tbody>
         </Table>
       </div>
