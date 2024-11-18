@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Button, TextInput, Table } from "@mantine/core";
-import "./Grading_scheme.css";
+import "./Gradingscheme.css";
 
 function GradeScheme() {
   useEffect(() => {

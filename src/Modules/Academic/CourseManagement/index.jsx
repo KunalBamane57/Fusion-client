@@ -11,7 +11,6 @@ import EvaluateAssignment from "./components/EvaluateAssignment";
 import ManageEvaluations from "./components/ManageEvaluations";
 
 import StdAttendance from "./components/StdAttendance";
-import StudentDashboard from "./components/StudentDashboard";
 import StudentviewContent from "./components/StudentviewContent";
 import Courses from "./components/Student_Registration/Courses";
 import Finalreg from "./components/Student_Registration/Finalreg";
@@ -44,8 +43,6 @@ function CourseManagementPage() {
       }
     } else {
       switch (activeComponent) {
-        case "Student_dashboard":
-          return <StudentDashboard />;
         case "Std_Attendance":
           return <StdAttendance />;
         case "Student_viewContent":
@@ -55,7 +52,7 @@ function CourseManagementPage() {
         case "Finalreg":
           return <Finalreg />;
         default:
-          return <StudentDashboard />;
+          return <Courses />;
       }
     }
   };
@@ -119,12 +116,6 @@ function CourseManagementPage() {
       ) : (
         <>
           <Group position="center" spacing="md" mb="md" className="grp_btn">
-            <button
-              onClick={() => setActiveComponent("Student_dashboard")}
-              className={isActive("Student_dashboard") ? "active" : ""}
-            >
-              Student Dashboard
-            </button>
             <button
               onClick={() => setActiveComponent("Std_Attendance")}
               className={isActive("Std_Attendance") ? "active" : ""}
