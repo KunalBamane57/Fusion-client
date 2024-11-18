@@ -1,5 +1,5 @@
 import React from "react";
-import "./Student_dashboard.css";
+import "./StudentDashboard.css";
 
 const courses = [
   {
@@ -26,7 +26,7 @@ const courses = [
   },
 ];
 
-function Student_dashboard() {
+function StudentDashboard() {
   return (
     <div className="dashboard-container">
       <h2>Sem 4 Year 2024-2025</h2>
@@ -79,4 +79,4 @@ function Student_dashboard() {
   );
 }
 
-export default Student_dashboard;
+export default StudentDashboard;

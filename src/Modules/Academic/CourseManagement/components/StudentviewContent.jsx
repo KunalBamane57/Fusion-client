@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Tabs, Paper, Text, Button } from "@mantine/core";
-import "./Student_viewContent.css";
+import "./StudentviewContent.css";
 
 const modules = [
   {
@@ -55,7 +55,7 @@ const modules = [
   },
 ];
 
-function Student_viewContent() {
+function StudentviewContent() {
   // Initialize active tab to an empty string
   const [activeTab, setActiveTab] = useState("");
 
@@ -111,4 +111,4 @@ function Student_viewContent() {
   );
 }
 
-export default Student_viewContent;
+export default StudentviewContent;

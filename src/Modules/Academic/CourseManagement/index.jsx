@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Text, Group } from "@mantine/core";
+import { Group } from "@mantine/core";
 import CustomBreadcrumbs from "../../../components/Breadcrumbs";
 import Announcements from "./components/Announcements";
 import Attendance from "./components/Attendance";
@@ -10,9 +10,9 @@ import SubmitMarks from "./components/SubmitMarks";
 import EvaluateAssignment from "./components/EvaluateAssignment";
 import ManageEvaluations from "./components/ManageEvaluations";
 
-import Std_Attendance from "./components/Std_Attendance";
-import Student_dashboard from "./components/Student_dashboard";
-import Student_viewContent from "./components/Student_viewContent";
+import StdAttendance from "./components/StdAttendance";
+import StudentDashboard from "./components/StudentDashboard";
+import StudentviewContent from "./components/StudentviewContent";
 import Courses from "./components/Student_Registration/Courses";
 import Finalreg from "./components/Student_Registration/Finalreg";
 
@@ -45,17 +45,17 @@ function CourseManagementPage() {
     } else {
       switch (activeComponent) {
         case "Student_dashboard":
-          return <Student_dashboard />;
+          return <StudentDashboard />;
         case "Std_Attendance":
-          return <Std_Attendance />;
+          return <StdAttendance />;
         case "Student_viewContent":
-          return <Student_viewContent />;
+          return <StudentviewContent />;
         case "Courses":
           return <Courses />;
         case "Finalreg":
           return <Finalreg />;
         default:
-          return <Student_dashboard />;
+          return <StudentDashboard />;
       }
     }
   };
@@ -65,7 +65,7 @@ function CourseManagementPage() {
   return (
     <>
       <CustomBreadcrumbs />
-      <Text>Course Management Page</Text>
+      {/* <Text>Course Management Page</Text> */}
 
       {role === "Professor" ? (
         <>
