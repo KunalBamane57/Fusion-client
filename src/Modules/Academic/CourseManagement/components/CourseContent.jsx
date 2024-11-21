@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Button, Table, TextInput, ActionIcon, FileInput } from "@mantine/core";
-import { IconTrash } from "@tabler/icons-react";
+import { Button, Table, TextInput, FileInput } from "@mantine/core";
 import "./CourseContent.css";
 
 function CourseContent() {
@@ -66,7 +65,7 @@ function CourseContent() {
           Submit
         </Button>
 
-        <Table highlightOnHover className="custom-table">
+        <Table highlightOnHover>
           <thead>
             <tr>
               <th>Sr.</th>
@@ -80,9 +79,12 @@ function CourseContent() {
                 <td>{index + 1}</td>
                 <td>{module.name}</td>
                 <td>
-                  <ActionIcon color="red" onClick={() => deleteModule(index)}>
-                    <IconTrash />
-                  </ActionIcon>
+                  <button
+                    className="Delete"
+                    onClick={() => deleteModule(index)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
@@ -114,7 +116,7 @@ function CourseContent() {
           Submit
         </Button>
 
-        <Table highlightOnHover className="custom-table">
+        <Table highlightOnHover>
           <thead>
             <tr>
               <th>Module Name</th>
@@ -126,7 +128,7 @@ function CourseContent() {
               <tr key={moduleIndex}>
                 <td>{module.name}</td>
                 <td>
-                  <Table highlightOnHover className="custom-table">
+                  <Table highlightOnHover>
                     <thead>
                       <tr>
                         <th>Sr.</th>
@@ -141,14 +143,14 @@ function CourseContent() {
                           <td>{slideIndex + 1}</td>
                           <td>{slide.name}</td>
                           <td>
-                            <ActionIcon
-                              color="red"
+                            <button
+                              className="Delete"
                               onClick={() =>
                                 deleteSlide(moduleIndex, slideIndex)
                               }
                             >
-                              <IconTrash />
-                            </ActionIcon>
+                              Delete
+                            </button>
                           </td>
                           <td>
                             <a

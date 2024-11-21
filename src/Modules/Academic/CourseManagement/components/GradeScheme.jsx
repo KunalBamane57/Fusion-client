@@ -1,42 +1,50 @@
-import React, { useEffect } from "react";
-import { Button, TextInput, Table } from "@mantine/core";
+import React, { useEffect, useState } from "react";
+import { Button, TextInput, Table, Notification } from "@mantine/core";
+import axios from "axios";
 import "./Gradingscheme.css";
 
 function GradeScheme() {
-  useEffect(() => {
-    // Declare table only once
-    const tableElement = document.querySelector(".grading_table");
+  const [gradingData, setGradingData] = useState({});
+  const [message, setMessage] = useState(null);
 
-    if (tableElement) {
-      const inputs = tableElement.querySelectorAll("input");
+  const grades = ["O", "A+", "A", "B+", "B", "C+", "C", "D+", "D", "F"];
 
-      inputs.forEach((input) => {
-        input.addEventListener("input", (e) => {
-          const row = e.target.closest("tr");
-          const grade = row.querySelector("td:first-child").innerText;
+  const handleInputChange = (grade, bound, value) => {
+    setGradingData((prevData) => ({
+      ...prevData,
+      [`${grade}_${bound}`]: value,
+    }));
+  };
 
-          // Ensure closest td exists and has the data-bound attribute
-          const boundCell = e.target.closest("td");
-          const bound = boundCell ? boundCell.dataset.bound : null;
-
-          if (bound) {
-            console.log(
-              `Grade: ${grade}, Bound: ${bound}, Value: ${e.target.value}`,
-            );
-          } else {
-            console.error("No data-bound attribute found");
-          }
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post(
+        "/api/submit-grading-scheme",
+        gradingData,
+      );
+      if (response.status === 200) {
+        setMessage({
+          type: "success",
+          text: "Grading scheme uploaded successfully!",
         });
+      } else {
+        setMessage({ type: "error", text: "Failed to upload grading scheme." });
+      }
+    } catch (error) {
+      setMessage({
+        type: "error",
+        text: "An error occurred while submitting the grading scheme.",
       });
-
-      // Cleanup event listeners when the component unmounts
-      return () => {
-        inputs.forEach((input) => {
-          input.removeEventListener("input", () => {});
-        });
-      };
     }
-  }, []);
+  };
+
+  useEffect(() => {
+    // Cleanup notification after 5 seconds
+    if (message) {
+      const timer = setTimeout(() => setMessage(null), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
 
   return (
     <div className="main_grading_scheme">
@@ -44,7 +52,7 @@ function GradeScheme() {
         <h1>Create Grading Scheme</h1>
       </div>
       <div className="grading_table_wrapper">
-        <Table striped highlightOnHover className="custom-table">
+        <Table striped highlightOnHover className="Grading_table">
           <thead>
             <tr>
               <th>Grade</th>
@@ -53,28 +61,47 @@ function GradeScheme() {
             </tr>
           </thead>
           <tbody>
-            {["O", "A+", "A", "B+", "B", "C+", "C", "D+", "D", "F"].map(
-              (grade) => (
-                <tr key={grade}>
-                  <td>{grade}</td>
-                  <td data-bound="lower">
-                    <TextInput placeholder="Lower Bound" />
-                  </td>
-                  <td data-bound="upper">
-                    <TextInput placeholder="Upper Bound" />
-                  </td>
-                </tr>
-              ),
-            )}
+            {grades.map((grade) => (
+              <tr key={grade}>
+                <td>{grade}</td>
+                <td data-bound="lower">
+                  <TextInput
+                    placeholder="Lower Bound"
+                    onChange={(e) =>
+                      handleInputChange(grade, "Lower", e.target.value)
+                    }
+                  />
+                </td>
+                <td data-bound="upper">
+                  <TextInput
+                    placeholder="Upper Bound"
+                    onChange={(e) =>
+                      handleInputChange(grade, "Upper", e.target.value)
+                    }
+                  />
+                </td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </div>
 
       <div className="upload_button_wrapper">
-        <Button variant="filled" color="blue" className="add_button">
+        <Button
+          variant="filled"
+          color="blue"
+          className="add_button"
+          onClick={handleSubmit}
+        >
           Upload Grading Scheme
         </Button>
       </div>
+
+      {message && (
+        <Notification color={message.type === "success" ? "green" : "red"}>
+          {message.text}
+        </Notification>
+      )}
     </div>
   );
 }
