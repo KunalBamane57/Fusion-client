@@ -66,7 +66,7 @@ function CourseContent() {
           Submit
         </Button>
 
-        <Table highlightOnHover>
+        <Table highlightOnHover className="custom-table">
           <thead>
             <tr>
               <th>Sr.</th>
@@ -114,7 +114,7 @@ function CourseContent() {
           Submit
         </Button>
 
-        <Table highlightOnHover>
+        <Table highlightOnHover className="custom-table">
           <thead>
             <tr>
               <th>Module Name</th>
@@ -126,7 +126,7 @@ function CourseContent() {
               <tr key={moduleIndex}>
                 <td>{module.name}</td>
                 <td>
-                  <Table highlightOnHover>
+                  <Table highlightOnHover className="custom-table">
                     <thead>
                       <tr>
                         <th>Sr.</th>

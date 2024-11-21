@@ -11,18 +11,19 @@ import "./ManageEvaluations.css";
 
 function ManageEvaluations() {
   const [students, setStudents] = useState([
-    { rollNo: "23BCS131", totalMarks: 0, grade: "" },
-    { rollNo: "23BCS001", totalMarks: 0, grade: "" },
-    { rollNo: "23BCS003", totalMarks: 0, grade: "" },
-    { rollNo: "23BCS004", totalMarks: 0, grade: "" },
-    { rollNo: "23BCS005", totalMarks: 0, grade: "" },
-    { rollNo: "23BCS006", totalMarks: 0, grade: "" },
-    { rollNo: "23BCS007", totalMarks: 0, grade: "" },
+    { rollNo: "23BCS131", totalMarks: "", grade: "" },
+    { rollNo: "23BCS001", totalMarks: "", grade: "" },
+    { rollNo: "23BCS003", totalMarks: "", grade: "" },
+    { rollNo: "23BCS004", totalMarks: "", grade: "" },
+    { rollNo: "23BCS005", totalMarks: "", grade: "" },
+    { rollNo: "23BCS006", totalMarks: "", grade: "" },
+    { rollNo: "23BCS007", totalMarks: "", grade: "" },
   ]);
 
   const handleGenerateGrades = () => {
     const updatedStudents = students.map((student) => {
-      const grade = student.totalMarks > 50 ? "Pass" : "Fail";
+      const grade =
+        student.totalMarks && student.totalMarks > 50 ? "Pass" : "Fail";
       return { ...student, grade };
     });
     setStudents(updatedStudents);
@@ -32,6 +33,14 @@ function ManageEvaluations() {
     setStudents((prev) =>
       prev.map((student, i) =>
         i === index ? { ...student, totalMarks: value } : student,
+      ),
+    );
+  };
+
+  const handleGradeChange = (index, value) => {
+    setStudents((prev) =>
+      prev.map((student, i) =>
+        i === index ? { ...student, grade: value } : student,
       ),
     );
   };
@@ -49,7 +58,11 @@ function ManageEvaluations() {
         />
       </td>
       <td>
-        <TextInput value={student.grade || "Add manually"} readOnly />
+        <TextInput
+          placeholder="Add manually"
+          value={student.grade}
+          onChange={(e) => handleGradeChange(index, e.currentTarget.value)}
+        />
       </td>
     </tr>
   ));
@@ -67,7 +80,7 @@ function ManageEvaluations() {
       <p>(Please Click on Generate button before uploading)</p>
       <ScrollArea style={{ height: 400 }}>
         <Box sx={{ width: "100%" }}>
-          <Table striped className="Grading_table">
+          <Table striped className="custom-table">
             <thead>
               <tr>
                 <th>Roll No</th>
@@ -79,8 +92,8 @@ function ManageEvaluations() {
           </Table>
         </Box>
       </ScrollArea>
-      <div className="btn">
-        <Button mt="md" onClick={handleGenerateGrades}>
+      <div>
+        <Button className="btn" mt="md" onClick={handleGenerateGrades}>
           Generate Grades
         </Button>
       </div>

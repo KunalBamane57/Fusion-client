@@ -17,7 +17,7 @@ function ViewAttendance() {
     <div className="attendance-page">
       <h2>View Attendance</h2>
       <p>Total Attendance = 80%</p>
-      <Table highlightOnHover>
+      <Table highlightOnHover className="custom-table">
         <thead>
           <tr>
             <th>Roll No.</th>

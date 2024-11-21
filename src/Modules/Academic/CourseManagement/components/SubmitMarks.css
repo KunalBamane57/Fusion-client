@@ -8,8 +8,70 @@
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 24px;
+  text-align: center;
   margin-bottom: 20px;
+}
+
+.custom-table {
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.custom-table th {
+  padding: 8px;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color: white;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.custom-table td {
+  padding: 10px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.custom-table td:last-child,
+.custom-table th:last-child {
+  border-right: none;
+}
+
+.custom-table tbody tr {
+  background-color: white;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.custom-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .custom-table th,
+  .custom-table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-table th,
+  .custom-table td {
+    font-size: 12px;
+    padding: 5px;
+  }
 }
 
 /* Flexbox for the dropdown and total marks input */
@@ -29,25 +91,9 @@ h2 {
   width: 200px; 
 }
 
-.marks-table {
-  margin-bottom: 20px;
-  border: 2px solid #ccc;
-}
-
-.marks-table th,
-.marks-table td {
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
-
 .submit-button {
   background-color: #15abff;
   color: white;
   display: block;
   margin: 0 auto;
-}
-
-.marks_table_tr{
-  background-color: #f0f0f0;
 }

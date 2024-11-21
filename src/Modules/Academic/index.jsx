@@ -58,7 +58,7 @@ function AcademicPage() {
           Course Management
         </Text>
 
-        <Table highlightOnHover>
+        <Table highlightOnHover className="custom-table">
           <thead>
             <tr>
               <th>#</th>

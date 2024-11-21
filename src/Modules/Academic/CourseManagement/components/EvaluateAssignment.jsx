@@ -89,7 +89,7 @@ function EvaluateAssignment() {
       />
 
       <div className="tableContainer">
-        <Table striped withBorder highlightOnHover>
+        <Table striped withBorder highlightOnHover className="custom-table">
           <thead className="tableHeader">
             <tr>
               <th>Roll Number</th>
@@ -112,7 +112,9 @@ function EvaluateAssignment() {
                     <TextInput placeholder="Enter obtained marks" />
                   </td>
                   <td>
-                    <Button className="customButton">Download</Button>
+                    <Button className="btn" color="#15abff">
+                      Download
+                    </Button>
                   </td>
                 </tr>
               ))

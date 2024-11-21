@@ -48,7 +48,7 @@ function SubmitMarks() {
         />
       </div>
 
-      <Table highlightOnHover className="marks-table">
+      <Table highlightOnHover className="custom-table">
         <thead>
           <tr className="marks_table_tr">
             <th>Roll Number</th>
