@@ -98,6 +98,7 @@ function StudentviewContent() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="customButton"
+                    style={{ backgroundColor: "#15abff" }}
                   >
                     Download Slide
                   </Button>
