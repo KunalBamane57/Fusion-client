@@ -74,7 +74,10 @@ function Announcement() {
               </button>
             )}
           </FileButton>
-          <Button className="customButton" style={{ marginTop: "1rem" }}>
+          <Button
+            className="customButton"
+            style={{ marginTop: "1rem", backgroundColor: "#15abff" }}
+          >
             Submit
           </Button>
         </Card.Section>

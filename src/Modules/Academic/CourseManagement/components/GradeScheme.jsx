@@ -44,7 +44,7 @@ function GradeScheme() {
         <h1>Create Grading Scheme</h1>
       </div>
       <div className="grading_table_wrapper">
-        <Table striped highlightOnHover className="Grading_table">
+        <Table striped highlightOnHover className="custom-table">
           <thead>
             <tr>
               <th>Grade</th>

@@ -68,7 +68,7 @@ function Courses() {
       <div className="text-center mb-2 font-bold">
         <span className="heading">Available Courses for Next Semester</span>
       </div>
-      <table className="table-auto">
+      <table className="custom-table table-auto">
         <thead>
           <tr>
             <th>#</th>

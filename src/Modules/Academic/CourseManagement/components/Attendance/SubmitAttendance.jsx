@@ -30,7 +30,6 @@ function SubmitAttendance() {
       <h2>Submit Attendance</h2>
 
       <form onSubmit={handleSubmit} className="submit-attendance-form">
-        {/* File Upload Input */}
         <div className="form-group">
           <label htmlFor="attendance-file" className="file-label">
             Upload Attendance (Excel):
@@ -44,14 +43,12 @@ function SubmitAttendance() {
           </label>
         </div>
 
-        {/* Show selected file name */}
         {selectedFile && (
           <div className="file-info">
             <p>Selected File: {selectedFile.name}</p>
           </div>
         )}
 
-        {/* Submit Button */}
         <div className="form-group">
           <button
             type="submit"

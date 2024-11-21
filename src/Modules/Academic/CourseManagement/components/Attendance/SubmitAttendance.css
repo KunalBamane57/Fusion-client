@@ -1,6 +1,12 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
 .submit-attendance-page {
   max-width: 600px;
-  margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 8px;
@@ -9,13 +15,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
 }
 
 .submit-attendance-page h2 {
   text-align: center;
-  color: #15abff; /* Blue color for heading */
+  color: #15abff;
   margin-bottom: 20px;
-  font-size: 24px; /* Set font size to 24px */
+  font-size: 24px;
 }
 
 .submit-attendance-form {
@@ -71,7 +83,6 @@
   background-color: #25acde;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .submit-attendance-page {
     padding: 15px;
