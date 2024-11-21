@@ -4,35 +4,78 @@
   margin-right: 32px;
   background-color: #fff;
   border-radius: 8px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+}
+
+h2 {
+  text-align: center;
 }
 
 .input-section {
   margin-bottom: 20px;
 }
 
-table {
+.custom-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 20px;
+  background-color: white;
 }
 
-th,
-td {
+.custom-table th {
+  padding: 8px;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color: white;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.custom-table td {
   padding: 10px;
   text-align: center;
+  border: none;
   border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 
-th {
-  background-color: #e8faff;
-  color: #15abff;
-  font-weight: 600;
-  font-size: 1.2rem; /* Adjusted font size */
+.custom-table td:last-child,
+.custom-table th:last-child {
+  border-right: none;
 }
 
-tr:nth-child(even) {
+.custom-table tbody tr {
+  background-color: white;
+}
+
+.custom-table tbody tr:hover {
   background-color: #f9f9f9;
 }
+
+.custom-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .custom-table th,
+  .custom-table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .custom-table th,
+  .custom-table td {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
 
 .customButton {
   background-color: #6200ea;
@@ -94,14 +137,4 @@ a:hover {
 
 .submit_btn:hover {
   background-color: #25acde;
-}
-.Delete{
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: white;
-  color: red;
-  border: 2px solid red;
-  width: 100px;
-  border-radius: 5px;
-  padding: 5px;
 }

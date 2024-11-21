@@ -38,9 +38,7 @@ function Announcement() {
               <Text style={{ color: "grey", opacity: 0.6 }} size="sm">
                 1 Month, 1 Week ago
               </Text>
-              <Text style={{ color: "blue", cursor: "pointer" }}>
-                Welcome to the course!
-              </Text>
+              <Text style={{ cursor: "pointer" }}>Welcome to the course!</Text>
             </div>
           </div>
         </Card.Section>

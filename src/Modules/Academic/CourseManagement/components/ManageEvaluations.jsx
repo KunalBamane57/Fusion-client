@@ -70,11 +70,8 @@ function ManageEvaluations() {
   return (
     <Container
       fluid
-      mx="20px"
       style={{ backgroundColor: "white" }}
-      py="10px"
-      px="20px"
-      className="main_grading_scheme"
+      className="ManageEvaluations"
     >
       <h1>Manage Evaluations</h1>
       <p>(Please Click on Generate button before uploading)</p>

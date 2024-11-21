@@ -1,6 +1,8 @@
-.main_grading_scheme {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+.ManageEvaluations {
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  padding: 30px;
+  margin-left: 32px !important;
+  margin-right: 32px !important;
   background-color: white;
   max-width: 90vw;
   border-radius: 8px;
