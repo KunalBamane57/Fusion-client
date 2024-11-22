@@ -9,11 +9,12 @@ import GradeScheme from "./components/GradeScheme";
 import SubmitMarks from "./components/SubmitMarks";
 import EvaluateAssignment from "./components/EvaluateAssignment";
 import ManageEvaluations from "./components/ManageEvaluations";
-
+import StdAssignmentSub from "./components/StdAssignmentSub";
 import StdAttendance from "./components/StdAttendance";
 import StudentviewContent from "./components/StudentviewContent";
-import Courses from "./components/Student_Registration/Courses";
-import Finalreg from "./components/Student_Registration/Finalreg";
+// import Courses from "./components/Student_Registration/Courses";
+import StdViewmarks from "./components/StdViewmarks";
+// import Finalreg from "./components/Student_Registration/Finalreg";
 
 import "./index.css";
 
@@ -36,8 +37,10 @@ function CourseManagementPage() {
       : [
           { title: "Attendance" },
           { title: "View Content" },
-          { title: "Courses" },
-          { title: "Final Registration" },
+          // { title: "Courses" },
+          // { title: "Final Registration" },
+          { title: "Assignment Submit" },
+          { title: "View Marks" },
         ];
 
   // Define the badges (if applicable, or use an empty array)
@@ -74,12 +77,16 @@ function CourseManagementPage() {
           return <StdAttendance />;
         case "View Content":
           return <StudentviewContent />;
-        case "Courses":
-          return <Courses />;
-        case "Final Registration":
-          return <Finalreg />;
+        // case "Courses":
+        //   return <Courses />;
+        // case "Final Registration":
+        //   return <Finalreg />;
+        case "Assignment Submit":
+          return <StdAssignmentSub />;
+        case "View Marks":
+          return <StdViewmarks />;
         default:
-          return <Courses />;
+          return <StdAttendance />;
       }
     }
   };
