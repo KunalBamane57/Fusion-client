@@ -52,45 +52,50 @@ function AcademicPage() {
         padding="lg"
         radius="md"
         withBorder
-        style={{ marginTop: "20px" }}
+        style={{
+          marginTop: "20px",
+          overflow: "hidden",
+        }}
       >
         <Text size="lg" weight={600} mb="md" className="headingContainer">
           Course Management
         </Text>
 
-        <Table highlightOnHover className="custom-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Course Code</th>
-              <th>Course Name</th>
-              <th>Credits</th>
-              <th>Hours</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {courses.map((course, index) => (
-              <tr key={course.id}>
-                <td>{index + 1}</td>
-                <td>{course.code}</td>
-                <td>{course.name}</td>
-                <td>{course.credits}</td>
-                <td>{course.hours}</td>
-                <td>
-                  <Button
-                    variant="light"
-                    color="blue"
-                    onClick={() => navigate(`/academics/course-management`)}
-                    className="manage_btn"
-                  >
-                    Manage
-                  </Button>
-                </td>
+        <div style={{ maxHeight: "400px", overflow: "auto" }}>
+          <Table highlightOnHover className="custom-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Credits</th>
+                <th>Hours</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {courses.map((course, index) => (
+                <tr key={course.id}>
+                  <td>{index + 1}</td>
+                  <td>{course.code}</td>
+                  <td>{course.name}</td>
+                  <td>{course.credits}</td>
+                  <td>{course.hours}</td>
+                  <td>
+                    <Button
+                      variant="light"
+                      color="blue"
+                      onClick={() => navigate(`/academics/course-management`)}
+                      className="manage_btn"
+                    >
+                      Manage
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
       </Card>
     </>
   );

@@ -108,6 +108,14 @@ tbody tr:hover {
   margin-bottom: 20px;
 }
 
+.totalMarks {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
 .assignmentButton {
   background-color: #15abff;
   color: white;
