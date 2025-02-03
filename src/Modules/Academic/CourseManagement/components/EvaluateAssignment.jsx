@@ -81,6 +81,11 @@ function EvaluateAssignment() {
         <Button className="assignmentButton">Assignment_2</Button>
       </div>
 
+      <div className="totalMarks">
+        <span>Total Marks</span>
+        <TextInput placeholder="Enter total marks" />
+      </div>
+
       <TextInput
         className="searchInput"
         placeholder="Search Student"
@@ -94,7 +99,6 @@ function EvaluateAssignment() {
             <tr>
               <th>Roll Number</th>
               <th>Student Name</th>
-              <th>Total Marks</th>
               <th>Marks Obtained</th>
               <th>Download Assignment</th>
             </tr>
@@ -105,9 +109,6 @@ function EvaluateAssignment() {
                 <tr key={student.rollNo}>
                   <td>{student.rollNo}</td>
                   <td>{student.name}</td>
-                  <td>
-                    <TextInput placeholder="Enter total marks" />
-                  </td>
                   <td>
                     <TextInput placeholder="Enter obtained marks" />
                   </td>

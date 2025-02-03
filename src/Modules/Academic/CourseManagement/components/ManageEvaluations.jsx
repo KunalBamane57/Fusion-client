@@ -81,7 +81,7 @@ function ManageEvaluations() {
             <thead>
               <tr>
                 <th>Roll No</th>
-                <th>Total Marks (%)</th>
+                <th>Total Marks Obtained</th>
                 <th>Grade</th>
               </tr>
             </thead>
