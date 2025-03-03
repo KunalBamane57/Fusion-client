@@ -5,7 +5,6 @@ import CustomBreadcrumbs from "../../../components/Breadcrumbs";
 import Announcements from "./components/Announcements";
 import Attendance from "./components/Attendance";
 import CourseContent from "./components/CourseContent";
-import GradeScheme from "./components/GradeScheme";
 import SubmitMarks from "./components/SubmitMarks";
 import EvaluateAssignment from "./components/EvaluateAssignment";
 import ManageEvaluations from "./components/ManageEvaluations";
@@ -30,7 +29,6 @@ function CourseManagementPage() {
           { title: "Attendance" },
           { title: "Course Content" },
           { title: "Evaluate Assignment" },
-          { title: "Grade Scheme" },
           { title: "Manage Evaluations" },
           { title: "Submit Marks" },
         ]
@@ -60,8 +58,6 @@ function CourseManagementPage() {
           return <CourseContent />;
         case "Evaluate Assignment":
           return <EvaluateAssignment />;
-        case "Grade Scheme":
-          return <GradeScheme />;
         case "Manage Evaluations":
           return <ManageEvaluations />;
         case "Submit Marks":

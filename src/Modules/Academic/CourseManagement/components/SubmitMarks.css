@@ -92,9 +92,19 @@ h2 {
   width: 200px; 
 }
 
+.lastButton {
+  display: flex;
+  justify-content: center; 
+  gap: 15px; 
+  margin-top: 20px; 
+}
+
+.edit-button,
 .submit-button {
   background-color: #15abff;
   color: white;
-  display: block;
-  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }

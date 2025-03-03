@@ -97,8 +97,24 @@ h1 {
   }
 }
 
+.lastButton {
+  display: flex;
+  justify-content: center; 
+  gap: 15px; 
+  margin-top: 20px; 
+}
+
+.submit-button {
+  background-color: #15abff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 /* Add some space for the button */
-.submit-button-container {
+/* .submit-button-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -117,4 +133,4 @@ h1 {
 
 .submit-button:hover {
   background-color: #0099cc;
-}
+} */

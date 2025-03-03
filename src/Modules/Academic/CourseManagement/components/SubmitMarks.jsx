@@ -74,8 +74,10 @@ function SubmitMarks() {
           ))}
         </tbody>
       </Table>
-
-      <Button className="submit-button">Submit Marks</Button>
+      <div className="lastButton">
+        <Button className="edit-button">Edit</Button>
+        <Button className="submit-button">Submit</Button>
+      </div>
     </div>
   );
 }

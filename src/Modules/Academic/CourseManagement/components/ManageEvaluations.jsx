@@ -11,36 +11,19 @@ import "./ManageEvaluations.css";
 
 function ManageEvaluations() {
   const [students, setStudents] = useState([
-    { rollNo: "23BCS131", totalMarks: "", grade: "" },
-    { rollNo: "23BCS001", totalMarks: "", grade: "" },
-    { rollNo: "23BCS003", totalMarks: "", grade: "" },
-    { rollNo: "23BCS004", totalMarks: "", grade: "" },
-    { rollNo: "23BCS005", totalMarks: "", grade: "" },
-    { rollNo: "23BCS006", totalMarks: "", grade: "" },
-    { rollNo: "23BCS007", totalMarks: "", grade: "" },
+    { rollNo: "23BCS131", totalMarks: "" },
+    { rollNo: "23BCS001", totalMarks: "" },
+    { rollNo: "23BCS003", totalMarks: "" },
+    { rollNo: "23BCS004", totalMarks: "" },
+    { rollNo: "23BCS005", totalMarks: "" },
+    { rollNo: "23BCS006", totalMarks: "" },
+    { rollNo: "23BCS007", totalMarks: "" },
   ]);
-
-  const handleGenerateGrades = () => {
-    const updatedStudents = students.map((student) => {
-      const grade =
-        student.totalMarks && student.totalMarks > 50 ? "Pass" : "Fail";
-      return { ...student, grade };
-    });
-    setStudents(updatedStudents);
-  };
 
   const handleTotalMarksChange = (index, value) => {
     setStudents((prev) =>
       prev.map((student, i) =>
         i === index ? { ...student, totalMarks: value } : student,
-      ),
-    );
-  };
-
-  const handleGradeChange = (index, value) => {
-    setStudents((prev) =>
-      prev.map((student, i) =>
-        i === index ? { ...student, grade: value } : student,
       ),
     );
   };
@@ -55,13 +38,6 @@ function ManageEvaluations() {
           placeholder="Total Marks"
           value={student.totalMarks}
           onChange={(e) => handleTotalMarksChange(index, e.currentTarget.value)}
-        />
-      </td>
-      <td>
-        <TextInput
-          placeholder="Add manually"
-          value={student.grade}
-          onChange={(e) => handleGradeChange(index, e.currentTarget.value)}
         />
       </td>
     </tr>
@@ -82,17 +58,15 @@ function ManageEvaluations() {
               <tr>
                 <th>Roll No</th>
                 <th>Total Marks Obtained</th>
-                <th>Grade</th>
               </tr>
             </thead>
             <tbody>{rows}</tbody>
           </Table>
         </Box>
       </ScrollArea>
-      <div>
-        <Button className="btn" mt="md" onClick={handleGenerateGrades}>
-          Generate Grades
-        </Button>
+      <div className="lastButton">
+        <Button className="edit-button">Edit</Button>
+        <Button className="submit-button">Submit</Button>
       </div>
     </Container>
   );
