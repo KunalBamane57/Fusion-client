@@ -81,9 +81,14 @@ function EvaluateAssignment() {
         <Button className="assignmentButton">Assignment_2</Button>
       </div>
 
-      <div className="totalMarks">
-        <span>Total Marks</span>
-        <TextInput placeholder="Enter total marks" />
+      <div className="secondTab">
+        <div className="totalMarks">
+          <span>Total Marks</span>
+          <TextInput placeholder="Enter total marks" />
+        </div>
+        <Button className="btn" color="#15abff">
+          Download All Assignments (.zip)
+        </Button>
       </div>
 
       <TextInput
@@ -113,9 +118,14 @@ function EvaluateAssignment() {
                     <TextInput placeholder="Enter obtained marks" />
                   </td>
                   <td>
-                    <Button className="btn" color="#15abff">
-                      Download
-                    </Button>
+                    <div className="button-container">
+                      <Button className="btn" color="#15abff">
+                        View
+                      </Button>
+                      <Button className="btn" color="#15abff">
+                        Download
+                      </Button>
+                    </div>
                   </td>
                 </tr>
               ))
@@ -130,7 +140,7 @@ function EvaluateAssignment() {
         </Table>
       </div>
 
-      <Button className="generateButton">Generate</Button>
+      <Button className="generateButton">Generate Grades</Button>
     </Paper>
   );
 }

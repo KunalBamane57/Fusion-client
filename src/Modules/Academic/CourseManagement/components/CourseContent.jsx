@@ -51,7 +51,9 @@ function CourseContent() {
     <div className="content-container">
       {/* Module Section */}
       <div className="module-section">
-        <h2>Add a Module</h2>
+        <h2>
+          Add a Module<span className="subheading"> (or chapter or unit) </span>
+        </h2>
         <TextInput
           placeholder="Enter module name"
           value={moduleInput}
@@ -94,7 +96,10 @@ function CourseContent() {
 
       {/* Slide Section */}
       <div className="slide-section" style={{ marginTop: "30px" }}>
-        <h2>Upload a Slide for a Module</h2>
+        <h2>
+          Upload a Slide for a Module{" "}
+          <span className="subheading"> (or chapter or unit) </span>
+        </h2>
         <FileInput
           placeholder="Upload slide file"
           value={slideInput}

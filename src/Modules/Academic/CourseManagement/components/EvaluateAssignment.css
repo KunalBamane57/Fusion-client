@@ -113,6 +113,12 @@ tbody tr:hover {
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
+}
+
+.secondTab{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
@@ -132,8 +138,14 @@ tbody tr:hover {
   background-color: #0096d1;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px;
+}
+
 .btn {
-  margin: auto;
   font-size: 14px;
   border-radius: 5px;
   cursor: pointer;
