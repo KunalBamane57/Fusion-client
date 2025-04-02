@@ -1,42 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Button, TextInput, Table } from "@mantine/core";
+import axios from "axios";
 import "./Gradingscheme.css";
+import { createGradingScheme } from "../../../../routes/courseMgmtRoutes/index";
 
 function GradeScheme() {
-  useEffect(() => {
-    // Declare table only once
-    const tableElement = document.querySelector(".grading_table");
+  const [gradingBoundaries, setGradingBoundaries] = useState({});
 
-    if (tableElement) {
-      const inputs = tableElement.querySelectorAll("input");
+  const evaluations = {
+    Midterm: 30,
+    "Final Exam": 50,
+    Assignments: 10,
+    Quizzes: 10,
+  };
 
-      inputs.forEach((input) => {
-        input.addEventListener("input", (e) => {
-          const row = e.target.closest("tr");
-          const grade = row.querySelector("td:first-child").innerText;
+  const formatGradeKey = (grade) => grade.replace("+", "_plus");
 
-          // Ensure closest td exists and has the data-bound attribute
-          const boundCell = e.target.closest("td");
-          const bound = boundCell ? boundCell.dataset.bound : null;
+  const handleInputChange = (grade, bound, value) => {
+    const formattedGrade = formatGradeKey(grade);
+    setGradingBoundaries((prev) => ({
+      ...prev,
+      [`${formattedGrade}_${bound}`]: Number(value),
+    }));
+  };
 
-          if (bound) {
-            console.log(
-              `Grade: ${grade}, Bound: ${bound}, Value: ${e.target.value}`,
-            );
-          } else {
-            console.error("No data-bound attribute found");
-          }
-        });
-      });
-
-      // Cleanup event listeners when the component unmounts
-      return () => {
-        inputs.forEach((input) => {
-          input.removeEventListener("input", () => {});
-        });
-      };
+  const handleSubmit = async () => {
+    try {
+      const token = localStorage.getItem("authToken");
+      const response = await axios.post(
+        createGradingScheme,
+        {
+          course_code: "ES102",
+          version: 1.0,
+          evaluations, // ✅ Now correctly formatted as an object
+          grading_boundaries: gradingBoundaries,
+        },
+        {
+          headers: {
+            Authorization: `Token ${token}`,
+            "Content-Type": "application/json",
+          },
+        },
+      );
+      console.log("Success:", response.data);
+      alert("Grading Scheme Uploaded Successfully");
+    } catch (error) {
+      console.error("Error:", error.response?.data || error.message);
+      alert("Failed to Upload Grading Scheme");
     }
-  }, []);
+  };
 
   return (
     <div className="main_grading_scheme">
@@ -57,11 +69,23 @@ function GradeScheme() {
               (grade) => (
                 <tr key={grade}>
                   <td>{grade}</td>
-                  <td data-bound="lower">
-                    <TextInput placeholder="Lower Bound" />
+                  <td data-bound="Lower">
+                    <TextInput
+                      placeholder="Lower Bound"
+                      type="number"
+                      onChange={(e) =>
+                        handleInputChange(grade, "Lower", e.target.value)
+                      }
+                    />
                   </td>
-                  <td data-bound="upper">
-                    <TextInput placeholder="Upper Bound" />
+                  <td data-bound="Upper">
+                    <TextInput
+                      placeholder="Upper Bound"
+                      type="number"
+                      onChange={(e) =>
+                        handleInputChange(grade, "Upper", e.target.value)
+                      }
+                    />
                   </td>
                 </tr>
               ),
@@ -69,9 +93,13 @@ function GradeScheme() {
           </tbody>
         </Table>
       </div>
-
       <div className="upload_button_wrapper">
-        <Button variant="filled" color="blue" className="add_button">
+        <Button
+          variant="filled"
+          color="blue"
+          className="add_button"
+          onClick={handleSubmit}
+        >
           Upload Grading Scheme
         </Button>
       </div>

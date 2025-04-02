@@ -8,3 +8,6 @@ export const addAssignment = `${host}/api/ocms/{course_code}/add_assignment`;
 export const submitAttendance = `${host}/api/ocms/{course_code}/submit_attendance`;
 export const viewAttendance = `${host}/api/ocms/{course_code}/view_attendance`;
 export const updateGrade = `${host}/api/ocms/{course_code}/update_grade`;
+
+// above path of the api is incorrect follow below path as /ocms/api/...
+export const createGradingScheme = `${host}/ocms/api/upload-grading-scheme/`;

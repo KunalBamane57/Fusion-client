@@ -14,7 +14,7 @@ import StudentviewContent from "./components/StudentviewContent";
 // import Courses from "./components/Student_Registration/Courses";
 import StdViewmarks from "./components/StdViewmarks";
 // import Finalreg from "./components/Student_Registration/Finalreg";
-
+import GradeScheme from "./components/GradeScheme";
 import "./index.css";
 
 function CourseManagementPage() {
@@ -31,6 +31,7 @@ function CourseManagementPage() {
           { title: "Evaluate Assignment" },
           { title: "Manage Evaluations" },
           { title: "Submit Marks" },
+          { title: "Grading Scheme" },
         ]
       : [
           { title: "Attendance" },
@@ -58,10 +59,13 @@ function CourseManagementPage() {
           return <CourseContent />;
         case "Evaluate Assignment":
           return <EvaluateAssignment />;
+        case "Grading Scheme":
+          return <GradeScheme />;
         case "Manage Evaluations":
           return <ManageEvaluations />;
         case "Submit Marks":
           return <SubmitMarks />;
+
         default:
           return <Announcements />;
       }
