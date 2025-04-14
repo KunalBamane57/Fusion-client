@@ -1,41 +1,64 @@
 import { useState } from "react";
+import {
+  Card,
+  Tabs,
+  Title,
+  Container,
+  Center,
+  Stack,
+  rem,
+} from "@mantine/core";
 import SubmitAttendance from "./Attendance/SubmitAttendance";
+import ViewAttendance from "./Attendance/ViewAttendance";
 import "./Attendance.css";
-import ViewAttendance from "./Attendance/viewAttendance";
 
 function Attendance() {
-  const [activeComponent, setActiveComponent] = useState(null);
+  const [activeTab, setActiveTab] = useState("view");
 
   return (
-    <div className="Main">
-      <div className="attendance-buttons">
-        <button
-          className={activeComponent === "view" ? "active" : ""}
-          onClick={() => setActiveComponent("view")}
+    <Container size="lg" py="xl">
+      <Center>
+        <Card
+          shadow="lg"
+          radius="xl"
+          p="xl"
+          withBorder
+          style={{ width: rem(700), maxWidth: "100%" }}
         >
-          View Attendance
-        </button>
-        <button
-          className={activeComponent === "submit" ? "active" : ""}
-          onClick={() => setActiveComponent("submit")}
-        >
-          Submit Attendance
-        </button>
-      </div>
+          <Stack spacing="xl" align="stretch">
+            <Title
+              order={2}
+              align="center"
+              style={{ color: "#1c7ed6", fontWeight: 600 }}
+            >
+              Attendance Management
+            </Title>
 
-      <div className="attendance">
-        {activeComponent === "view" && (
-          <div className="view_attendance">
-            <ViewAttendance />
-          </div>
-        )}
-        {activeComponent === "submit" && (
-          <div className="submit_attendance">
-            <SubmitAttendance />
-          </div>
-        )}
-      </div>
-    </div>
+            <Tabs
+              value={activeTab}
+              onChange={setActiveTab}
+              variant="pills"
+              color="blue"
+              radius="md"
+              keepMounted={false}
+            >
+              <Tabs.List grow mb="md">
+                <Tabs.Tab value="view">View Attendance</Tabs.Tab>
+                <Tabs.Tab value="submit">Submit Attendance</Tabs.Tab>
+              </Tabs.List>
+
+              <Tabs.Panel value="view">
+                <ViewAttendance />
+              </Tabs.Panel>
+
+              <Tabs.Panel value="submit">
+                <SubmitAttendance />
+              </Tabs.Panel>
+            </Tabs>
+          </Stack>
+        </Card>
+      </Center>
+    </Container>
   );
 }
 

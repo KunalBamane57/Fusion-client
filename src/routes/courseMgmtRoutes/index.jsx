@@ -11,3 +11,5 @@ export const updateGrade = `${host}/api/ocms/{course_code}/update_grade`;
 
 // above path of the api is incorrect follow below path as /ocms/api/...
 export const createGradingScheme = `${host}/ocms/api/upload-grading-scheme/`;
+export const getAttendance = `${host}/ocms/api/get-attendance/`;
+export const uploadAttendance = `${host}/ocms/api/upload-attendance/`;
