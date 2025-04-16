@@ -1,19 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./StdAssignmentSub.css";
 import axios from "axios";
+import { Button } from "@mantine/core";
 
 function StdAssignmentSub() {
   const [assignmentTitle, setAssignmentTitle] = useState("");
+  const [assignmentID, setAssignmentID] = useState(null);
   const [file, setFile] = useState(null);
+  const [assignments, setAssignments] = useState([]);
 
-  // TEMP: Hardcoded IDs — replace with actual values from auth/session/context
   const student_id = "22BSM024";
-  const assignment_id = 2;
+  const course_id = 2;
+  useEffect(() => {
+    const fetchAssignments = async () => {
+      const token = localStorage.getItem("authToken");
+      if (!token) {
+        alert("Authentication token missing.");
+        return;
+      }
+
+      try {
+        const res = await axios.get(
+          `http://127.0.0.1:8000/ocms/api/assignments/course/${course_id}/`,
+          {
+            headers: {
+              Authorization: `Token ${token}`,
+            },
+          },
+        );
+        setAssignments(res.data);
+      } catch (error) {
+        console.error("Failed to fetch assignments:", error);
+        alert("Failed to load assignments.");
+      }
+    };
+
+    fetchAssignments();
+  }, [course_id]);
+
+  const handleAssignmentClick = (assignment) => {
+    setAssignmentID(assignment.id);
+    setAssignmentTitle(assignment.assignment_name);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!file || !assignmentTitle) {
+    if (!file || !assignmentTitle || !assignmentID) {
       alert("Please fill all the fields.");
       return;
     }
@@ -25,9 +58,9 @@ function StdAssignmentSub() {
     }
 
     const formData = new FormData();
-    formData.append("student_id", student_id); // replace dynamically
-    formData.append("assignment_id", assignment_id); // replace dynamically
-    formData.append("upload_url", file); // assuming file is needed
+    formData.append("student_id", student_id);
+    formData.append("assignment_id", assignmentID);
+    formData.append("upload_url", file);
     formData.append("assign_name", assignmentTitle);
 
     try {
@@ -45,6 +78,7 @@ function StdAssignmentSub() {
       console.log("Success:", response.data);
       alert("Assignment submitted successfully!");
       setAssignmentTitle("");
+      setAssignmentID(null);
       setFile(null);
     } catch (error) {
       console.error("Submission error:", error.response?.data || error.message);
@@ -55,6 +89,19 @@ function StdAssignmentSub() {
   return (
     <div className="submission-container">
       <h1 className="title">Assignment Submission</h1>
+
+      <div className="tabContainer">
+        {assignments.map((assignment) => (
+          <Button
+            key={assignment.id}
+            className="assignmentButton"
+            onClick={() => handleAssignmentClick(assignment)}
+          >
+            {assignment.assignment_name}
+          </Button>
+        ))}
+      </div>
+
       <form className="submission-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="innerhead">
