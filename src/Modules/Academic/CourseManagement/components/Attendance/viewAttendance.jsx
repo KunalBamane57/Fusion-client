@@ -19,19 +19,23 @@ function ViewAttendance() {
   const [filters, setFilters] = useState({
     student_id: "",
     instructor_id: "",
-    date_from: "",
-    date_to: "",
   });
 
   const fetchAttendance = async () => {
     setLoading(true);
     try {
       const token = localStorage.getItem("authToken");
-      const params = { ...filters };
+
+      const params = {
+        student_id: filters.student_id,
+        instructor_id: filters.instructor_id,
+      };
+
       const response = await axios.get(getAttendance, {
         params,
         headers: { Authorization: `Token ${token}` },
       });
+
       setAttendanceData(response.data.data);
     } catch (error) {
       console.error("Error fetching attendance:", error);
@@ -64,29 +68,26 @@ function ViewAttendance() {
         <form onSubmit={handleFilterSubmit}>
           <Group grow spacing="sm" wrap="wrap">
             <TextInput
-              placeholder="Student ID"
+              label="Student ID"
+              placeholder="Enter student ID"
               value={filters.student_id}
               onChange={(e) => handleFilterChange("student_id", e.target.value)}
             />
             <TextInput
-              placeholder="Instructor ID"
+              label="Instructor ID"
+              placeholder="Enter instructor ID"
               value={filters.instructor_id}
               onChange={(e) =>
                 handleFilterChange("instructor_id", e.target.value)
               }
             />
-            <TextInput
-              type="date"
-              value={filters.date_from}
-              onChange={(e) => handleFilterChange("date_from", e.target.value)}
-            />
-            <TextInput
-              type="date"
-              value={filters.date_to}
-              onChange={(e) => handleFilterChange("date_to", e.target.value)}
-            />
-            <Button type="submit" variant="light" color="blue">
-              Apply
+            <Button
+              type="submit"
+              variant="filled"
+              color="blue"
+              style={{ marginTop: "24px" }}
+            >
+              View Attendance
             </Button>
           </Group>
         </form>
@@ -97,10 +98,10 @@ function ViewAttendance() {
             <thead>
               <tr>
                 <th>Student ID</th>
-                <th>Instructor ID</th>
+                <th>Student Name</th>
                 <th>Date</th>
-                <th>Present</th>
-                <th>Total Attendance</th>
+                <th>Status</th>
+                <th>Course</th>
               </tr>
             </thead>
             <tbody>
@@ -108,10 +109,18 @@ function ViewAttendance() {
                 attendanceData.map((record) => (
                   <tr key={record.id}>
                     <td>{record.student_id}</td>
-                    <td>{record.instructor_id}</td>
-                    <td>{record.date}</td>
-                    <td>{record.present}</td>
-                    <td>{record.no_of_attendance}</td>
+                    <td>{record.student_name || "-"}</td>
+                    <td>{new Date(record.date).toLocaleDateString()}</td>
+                    <td>
+                      <span
+                        className={
+                          record.present ? "present-status" : "absent-status"
+                        }
+                      >
+                        {record.present ? "Present" : "Absent"}
+                      </span>
+                    </td>
+                    <td>{record.course_code || "-"}</td>
                   </tr>
                 ))
               ) : (
@@ -120,7 +129,7 @@ function ViewAttendance() {
                     colSpan={5}
                     style={{ textAlign: "center", color: "#888" }}
                   >
-                    No data found
+                    No attendance records found
                   </td>
                 </tr>
               )}
