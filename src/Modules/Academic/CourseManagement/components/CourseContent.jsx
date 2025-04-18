@@ -93,10 +93,10 @@ function CourseContent() {
     if (slideInput && selectedModuleIndex !== "") {
       const moduleId = modules[selectedModuleIndex].id;
       const formData = new FormData();
-      formData.file = slideInput; // Ensure backend processes this
+      formData.append("document_url", slideInput); // ✅ Corrected key
       formData.append("document_name", slideInput.name);
-      formData.append("description", "Slide uploaded"); // Adjust as needed
-      console.log(formData, slideInput);
+      formData.append("description", "Slide uploaded");
+
       try {
         const token = localStorage.getItem("authToken");
         if (!token) {
@@ -105,7 +105,6 @@ function CourseContent() {
         }
 
         const url = `${host}/ocms/api/slides/${moduleId}/add_document/`;
-        console.log("Requesting:", url);
 
         const response = await axios.post(url, formData, {
           headers: {
@@ -300,7 +299,7 @@ function CourseContent() {
                             <td>
                               {slide?.document_url ? (
                                 <a
-                                  href={slide.document_url}
+                                  href={`http://127.0.0.1:8000${slide.document_url}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   onClick={() =>
