@@ -9,7 +9,7 @@ import {
   rem,
 } from "@mantine/core";
 import SubmitAttendance from "./Attendance/SubmitAttendance";
-import ViewAttendance from "./Attendance/ViewAttendance";
+import ViewAttendance from "./Attendance/viewAttendance";
 import "./Attendance.css";
 
 function Attendance() {
