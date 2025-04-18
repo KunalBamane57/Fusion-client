@@ -5,9 +5,9 @@ import CustomBreadcrumbs from "../../../components/Breadcrumbs";
 import Announcements from "./components/Announcements";
 import Attendance from "./components/Attendance";
 import CourseContent from "./components/CourseContent";
-import SubmitMarks from "./components/SubmitMarks";
+// import SubmitMarks from "./components/SubmitMarks";
 import EvaluateAssignment from "./components/EvaluateAssignment";
-import ManageEvaluations from "./components/ManageEvaluations";
+// import ManageEvaluations from "./components/ManageEvaluations";
 import StdAssignmentSub from "./components/StdAssignmentSub";
 import StdAttendance from "./components/StdAttendance";
 import StudentviewContent from "./components/StudentviewContent";
@@ -29,8 +29,8 @@ function CourseManagementPage() {
           { title: "Attendance" },
           { title: "Course Content" },
           { title: "Evaluate Assignment" },
-          { title: "Manage Evaluations" },
-          { title: "Submit Marks" },
+          // { title: "Manage Evaluations" },
+          // { title: "Submit Marks" },
           { title: "Grading Scheme" },
         ]
       : [
@@ -61,10 +61,10 @@ function CourseManagementPage() {
           return <EvaluateAssignment />;
         case "Grading Scheme":
           return <GradeScheme />;
-        case "Manage Evaluations":
-          return <ManageEvaluations />;
-        case "Submit Marks":
-          return <SubmitMarks />;
+        // case "Manage Evaluations":
+        //   return <ManageEvaluations />;
+        // case "Submit Marks":
+        //   return <SubmitMarks />;
 
         default:
           return <Announcements />;
